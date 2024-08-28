@@ -45,3 +45,10 @@ a {
   font-style: sans-serif;
 }
 
+section {
+  background-color: beige;
+}
+
+.a {
+  color: #6987C9;
+}
