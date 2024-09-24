@@ -1,6 +1,13 @@
-/* Moderní box model - nastavená šířka boxu je včetně paddingu a borderu */
+/* Moderní box model - nastavená šířka boxu je včetně paddingu a borderu
 html {
   box-sizing: border-box;
+} */
+
+/* Základní nastavení pro celou stránku */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 *,
@@ -9,46 +16,53 @@ html {
   box-sizing: inherit;
 }
 
-/* 
-------------------------------------------------
-To nahoře je černá magie, na to raději nešahej.
-Ale sem dolů už si můžeš psát, co budeš chtít.
-------------------------------------------------
-*/
+/* Kontejner pro dva sloupce */
+.container {
+  display: flex;           /* Flexbox pro rozdělení na sloupce */
+  flex-direction: row;      /* Sloupce budou vedle sebe */
+  min-height: 100vh;        /* Zajišťuje, aby stránka pokrývala celé okno */
+}
+
+/* Levý sloupec (úzký) */
+.left-column {
+  flex: 1;                 /* Úzký pruh (můžeš změnit hodnotu pro jinou šířku) */
+  background-color: rgba(222, 226, 230);  /* Světle šedé pozadí*/
+  padding: 20px;            /* Trochu odsazení od okrajů */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Pravý sloupec (široký) */
+.right-column {
+  flex: 3;                 /* Širší pruh */
+  padding: 20px;
+}
+
+/* vicenasobny selektor, kdyz chceme obarvit treba vice veci stejnou barvou nebo mit stejnym pismem, nemusime to psat do vsech bloku tady ale udelame jeden. Zefektivni kod.*/
+h1,
+h2 {
+  color: rgb(0, 0, 0);
+}
 
 h1 {
-  color: #6987C9;
-  background-color: #1f1f1f;
+  background-color: rgb(222, 226, 230);
   text-align: center;
   font-style: sans-serif;
-  font-size: 55px;
+  font-size: 40px;
 }
 
 h2 {
-  color: #6987C9;
-  font-size: 38px;
-  font-style: sans-serif;
-}
-
-h3 {
   font-size: 22px;
   font-style: sans-serif;
 }
 
-p {
-  font-size: 20px;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-a {
-  color: rgb(112, 88, 61);
+h3 {
+  font-size: 18px;
   font-style: sans-serif;
 }
 
-section {
-  background-color: beige;
-}
-
-.a {
-  color: #6987C9;
+p {
+  font-size: 14px;
+  font-family: Arial, sans-serif;
 }
