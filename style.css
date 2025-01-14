@@ -1,13 +1,9 @@
-/* Moderní box model - nastavená šířka boxu je včetně paddingu a borderu
-html {
-  box-sizing: border-box;
-} */
-
 /* Základní nastavení pro celou stránku */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  line-height: 1.7;
 }
 
 *,
@@ -18,38 +14,94 @@ html {
 
 /* Kontejner pro dva sloupce */
 .container {
-  display: flex;           /* Flexbox pro rozdělení na sloupce */
-  flex-direction: row;      /* Sloupce budou vedle sebe */
-  min-height: 100vh;        /* Zajišťuje, aby stránka pokrývala celé okno */
+  display: flex; /* Flexbox pro rozdělení na sloupce */
+  flex-direction: row; /* Sloupce budou vedle sebe */
+  min-height: 100vh; /* Zajišťuje, aby stránka pokrývala celé okno */
 }
 
-/* Levý sloupec (úzký) */
-.left-column {
-  flex: 1;                 /* Úzký pruh (můžeš změnit hodnotu pro jinou šířku) */
-  background-color: rgba(222, 226, 230);  /* Světle šedé pozadí*/
-  padding: 20px;            /* Trochu odsazení od okrajů */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
 }
 
-/* Pravý sloupec (široký) */
+/* LEVÝ SLOUPEC (úzký) */
+.sidebar {
+  flex: 1; /* Sidebar bude zabírat menší podíl */
+  max-width: 15%; /* Maximální šířka sidebaru */
+  flex-direction: column; /* Vertikální rozložení obsahu */
+  align-items: center; /* Zarovná fotku a text do středu sloupce */
+  background-color: rgba(222, 226, 230);  /* Světle šedé pozadí */
+  padding: 20px; /* Vnitřní mezera od okrajů */
+}
+
+/* Foto v levém pruhu */
+.photo {
+  width: 180px; /* Šířka kruhu */
+  height: 180px; /* Výška kruhu */
+  border-radius: 50%; /* Zaoblení rohů vytvoří kruh */
+  overflow: hidden; /* Skryje přetékající obsah */
+  margin: 0 auto 20px; /* Vycentrování a mezera pod kruhem */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Jemný stín pod kruhem */
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Zajistí, že obrázek správně vyplní kruh */
+}
+
+/* Foto v levém pruhu */
+.sidebar p {
+  max-width: 90%;
+  /*width: 200px;  Textový blok stejné šířky jako fotka */
+  text-align: left; /* Zarovnání textu doleva */
+  margin: 0; /* Odstraní výchozí mezery */
+}
+
+/* PRAVÝ SLOUPEC (široký) */
 .right-column {
-  flex: 3;                 /* Širší pruh */
+  flex: 3; /* Zabírá většinu šířky stránky */
+  padding: 0; /* Bez vnitřních mezer */
+  margin: 0; /* Bez vnějších mezer */
+}
+
+/* Všechen text v pravém sloupci */
+.text-container {
+  margin-bottom: 20px;
   padding: 20px;
 }
 
+/* Šedý pruh (nadpis v heading-container) */
+.heading-container {
+  width: 100%; /* Zabírá celou šířku sloupce */
+  background-color: rgb(222, 226, 230); /* Světle šedé pozadí */
+  box-sizing: border-box; /* Zahrnuje padding do šířky */
+}
+
+.heading-container h1 {
+  text-align: center; /* Zarovnání textu na střed */
+  font-size: 40px; /* Velikost textu */
+  padding-left: 0px; /* Přidává odsazení zleva */
+  margin: 0; /* Bez vnějších mezer */
+  font-family: "Georgia" serif; /* Styl písma */
+}
+
+/* TYPOGRAFIE */
 /* vicenasobny selektor, kdyz chceme obarvit treba vice veci stejnou barvou nebo mit stejnym pismem, nemusime to psat do vsech bloku tady ale udelame jeden. Zefektivni kod.*/
 h1,
 h2 {
   color: rgb(0, 0, 0);
 }
 
+/* Styl pro nadpis */
 h1 {
-  background-color: rgb(222, 226, 230);
   text-align: center;
-  font-style: sans-serif;
   font-size: 40px;
+  padding: 20px 0; /* Vnitřní odsazení nahoře a dole */
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 h2 {
@@ -66,3 +118,4 @@ p {
   font-size: 14px;
   font-family: Arial, sans-serif;
 }
+
