@@ -37,8 +37,8 @@
 
 /* Foto v levém pruhu */
 .photo {
-  width: 180px; /* Šířka kruhu */
-  height: 180px; /* Výška kruhu */
+  width: 190px; /* Šířka kruhu */
+  height: 190px; /* Výška kruhu */
   border-radius: 50%; /* Zaoblení rohů vytvoří kruh */
   overflow: hidden; /* Skryje přetékající obsah */
   margin: 0 auto 20px; /* Vycentrování a mezera pod kruhem */
@@ -49,6 +49,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover; /* Zajistí, že obrázek správně vyplní kruh */
+  object-position: 50% 15%; /* Horizontálně střed, vertikálně posunuto dolů o 80 % */
 }
 
 /* Foto v levém pruhu */
