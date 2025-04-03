@@ -17,6 +17,10 @@
   display: flex; /* Flexbox pro rozdělení na sloupce */
   flex-direction: row; /* Sloupce budou vedle sebe */
   min-height: 100vh; /* Zajišťuje, aby stránka pokrývala celé okno */
+  justify-content: center; /* Vycentruje oba sloupce dohromady na střed stránky */
+  align-items: flex-start; /* Zarovná obsah k hornímu okraji */
+  gap: 50px; /* Přidá mezeru mezi sidebar a pravý sloupec */
+  padding: 20px; /* Zajistí, že obsah není nalepený na okraje */
 }
 
 @media (max-width: 768px) {
@@ -28,11 +32,13 @@
 /* LEVÝ SLOUPEC (úzký) */
 .sidebar {
   flex: 1; /* Sidebar bude zabírat menší podíl */
-  max-width: 15%; /* Maximální šířka sidebaru */
+  max-width: 250px; /* Sidebar bude mít pevnou šířku */
+  display: flex;
   flex-direction: column; /* Vertikální rozložení obsahu */
   align-items: center; /* Zarovná fotku a text do středu sloupce */
   background-color: rgba(222, 226, 230);  /* Světle šedé pozadí */
-  padding: 20px; /* Vnitřní mezera od okrajů */
+  padding: 20px; /* Odsazení od okrajů */
+  border-radius: 10px; /* Lehké zaoblení rohů */
 }
 
 /* Foto v levém pruhu */
@@ -63,14 +69,34 @@
 /* PRAVÝ SLOUPEC (široký) */
 .right-column {
   flex: 3; /* Zabírá většinu šířky stránky */
-  padding: 0; /* Bez vnitřních mezer */
-  margin: 0; /* Bez vnějších mezer */
+  max-width: 800px; /* Nastaví maximální šířku obsahu */
+  padding: 20px; /* Přidá vnitřní mezery od kraje */
+  margin-left: -50px; /* Přitáhne pravý sloupec blíž k sidebaru */
+  background-color: #f8f8f8; /* Světle šedé pozadí pro lepší vizuální oddělení */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Jemný stín pro efekt oddělení */
+  border-radius: 10px; /* Lehké zaoblení rohů */
+
 }
 
 /* Všechen text v pravém sloupci */
 .text-container {
   margin-bottom: 20px;
   padding: 20px;
+}
+
+.o-mne {
+  margin-bottom: 10px;
+  padding-left: 15px; /* Přidává odsazení zleva */
+}
+
+.experience {
+  margin-bottom: 10px;
+  padding-left: 15px; /* Přidává odsazení zleva */
+}
+
+.mimo-obor {
+  margin-bottom: 10px;
+  padding-left: 15px; /* Přidává odsazení zleva */
 }
 
 /* Šedý pruh (nadpis v heading-container) */
@@ -119,4 +145,3 @@ p {
   font-size: 14px;
   font-family: Arial, sans-serif;
 }
-
