@@ -41,7 +41,7 @@
   border-radius: 10px; /* Lehké zaoblení rohů */
 }
 
-/* Foto v levém pruhu */
+/* Foto v levém sloupci */
 .photo {
   width: 190px; /* Šířka kruhu */
   height: 190px; /* Výška kruhu */
@@ -58,7 +58,7 @@
   object-position: 50% 15%; /* Horizontálně střed, vertikálně posunuto dolů o 80 % */
 }
 
-/* Foto v levém pruhu */
+/* Text v levém sloupci */
 .sidebar p {
   max-width: 90%;
   /*width: 200px;  Textový blok stejné šířky jako fotka */
@@ -78,7 +78,7 @@
 
 }
 
-/* Všechen text v pravém sloupci */
+/* Text v pravém sloupci */
 .text-container {
   margin-bottom: 20px;
   padding: 20px;
