@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kristýna Jiravová — CV</title>
+
+  <!-- Fonty: serif pro jméno, sans pro obsah -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- odkaz na CSS (přepiš nebo vytvoř nový soubor) -->
+  <link rel="stylesheet" href="style-redesign.css">
+</head>
+<body>
+  <!-- Hlavní obal stránky -->
+  <div class="stranka">
+
+    <!-- HLAVIČKA: pruh s jménem a fotkou -->
+    <header class="hlavicka">
+      <div class="hlavicka-obsah">
+        <h1 class="celeJmeno">Kristýna Jiravová</h1>
+      </div>
+
+      <!-- kruhová fotka -->
+      <div class="foto-kruh" aria-hidden="true">
+        <img src="IMG_20250902_182641.jpg" alt="Fotografie Kristýny Jiravové">
+      </div>
+    </header>
+
+    <!-- GRID: postranní panel (vlevo) + hlavní obsah (vpravo) -->
+    <main class="mreza">
+      <!-- LEVÝ SLUPEK: postranní panel -->
+      <aside class="postranniPanel">
+        <!-- krátký úvod (odstranili jsme kurzívu v CSS) -->
+        <div class="uvod">
+          <p class="uvodni-radek">Považuji se za spolehlivého člověka s dobrým nasazením do práce.</p>
+          <p class="uvodni-radek">Ve volném čase sportuji, chodím na procházky nebo kreativně tvořím.</p>
+        </div>
+
+        <hr class="oddeleni">
+
+        <div class="dalsi-udaje">
+          <p><strong>Řidičské oprávnění:</strong><br>skupiny B</p>
+          <p><strong>Jazyk:</strong><br>Anglický jazyk B1</p>
+        </div>
+
+        <hr class="oddeleni">
+
+        <!-- KONTAKT: adresa s ikonou + mail + telefon + LinkedIn tlačítko -->
+        <address class="kontakt">
+          <!-- adresa: ikonka vlevo, text vpravo (zarovnané víceřádkově) -->
+          <p class="kontakt-radek kontakt-adresa">
+            <svg class="ikona-umístění" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path fill="currentColor" d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1112 6.5a2.5 2.5 0 010 5z"/>
+            </svg>
+            Janouškova 369/1<br>Praha 6 - Veleslavín<br>162 00
+          </p>
+
+          <p class="kontakt-radek"><strong><a href="mailto:kristyna.jiravova@seznam.cz">kristyna.jiravova@seznam.cz</a></strong></p>
+          <p class="kontakt-radek"><strong><a href="tel:+420777642026">+420 777 642 026</a></strong></p>
+          
+          <p class="kontakt-radek">
+            <a class="tlacitko-linkedin" href="https://www.linkedin.com/in/username" target="_blank" rel="noopener">
+              <!-- linkedin ikona -->
+              <svg class="ikona-in" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path fill="currentColor" d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8.75h5V24H0V8.75zM8.5 8.75h4.79v2.05h.07c.67-1.25 2.3-2.56 4.73-2.56 5.06 0 6 3.33 6 7.66V24h-5V16.8c0-1.73-.03-3.95-2.41-3.95-2.41 0-2.78 1.88-2.78 3.82V24H8.5V8.75z"/>
+              </svg>
+              LinkedIn
+            </a>
+          </p>
+        </address>
+      </aside>
+
+      <!-- PRAVÝ SLUPEK: hlavní obsah -->
+      <section class="hlavniObsah">
+        <div class="karta">
+          <!-- O MNĚ -->
+          <section>
+            <h2>O MNĚ</h2>
+            <div class="o-mne">
+              <p>Úspěšně jsem složila maturitní zkoušku na Střední uměleckoprůmyslové škole keramické a sklářské v Karlových Varech z oboru grafický design. Ráda na sobě pracuji a zajímá mě IT, tak jsem se v tomto oboru začala vzdělávat. Chtěla bych se naučit programovat a najít v tomto směru uplatnění. Aktuálně zkouším tvořit vlastní projekty, ve kterých aplikuji jazyky - Python, HTML, CSS a Javascript. Mám za sebou několik kurzů společnosti Czechitas, ráda si dělám povědomí o dalších možnostech programování.</p>
+
+              <p>Přes rok pracuji na pozici IT administrátora v DWH, zaučuji se zde v oblasti Cloudu (Azure) a dalších činnostech, které popisuji v sekci Pracovní zkušenosti. Práce mě baví, stále se učím nové činnosti L2 administrátora, je to má první pracovní zkušenost v IT a jsem ráda, že zde rozvíjím znalosti, které budu moct třeba uplatnit v příštím zaměstnání.</p>
+
+              <p>Na obor grafického designu jsem nezanevřela a ve volném čase se zajímám o vizuály, loga, tiskoviny a jejich umístění do mockupu, návrh layoutu časopisu, plakátů, obalový design, sazbu knihy a vytvoření ilustrací. Také mě baví samotné zhotovení produktu a jeho předtisková příprava.</p>
+            </div>
+          </section>
+
+          <!-- PRACOVNÍ ZKUŠENOSTI -->
+          <section>
+            <h2>PRACOVNÍ ZKUŠENOSTI</h2>
+
+            <!-- IT role -->
+            <article class="pozice">
+              <h3><strong>L2 Data platform engineer DWH | Cetin a.s. | 2023 – nyní</strong></h3>
+              <ul class="seznam-prace">
+                <li>Kontrola provozu – monitoring, udržování prostředí, spouštění jobů, troubleshooting všech vrstev DWH</li>
+                <li>Správa virtuálních počítačů (SQL Server, Analysis Services, Master Data Services, Power BI Gateway)</li>
+                <li>Azure – monitoring zatížení, správa VM, kontrola budgetu, správa a prodlužování secrets</li>
+                <li>Power BI Services – správa workspace, nahrávání reportů, práce s Power BI app</li>
+                <li>Úpravy dokumentací a manuálů</li>
+                <li>Správa oprávnění (PBIS, DB, DBX), vytváření požadavků na AD skupiny a IDM role</li>
+                <li>Komunikace s uživateli a týmem, předávání informací, analýza problémů</li>
+                <li>Řešení SRE/INC – analýza, PRB, zakládání DevTasků</li>
+                <li>Nasazování SWD, úprava metadat refreshů, práce s DevOps/Databricks</li>
+              </ul>
+            </article>
+
+            <!-- GRAFICKÉ role (výpis) -->
+            <article class="pozice">
+              <h3><strong>DTP operátor, grafik | Proxima s.r.o. – Canon | 2021–2022</strong></h3>
+              <h3><strong>Grafik, práce ve výrobě | Reklamní předměty – dárky s.r.o. | 2021</strong></h3>
+              <h3><strong>Grafik, technik / výroba | Rema s.r.o. | 2017–2019 (praxe a brigáda)</strong></h3>
+              <h3><strong>Grafik | foliopotisk.cz | 2016–2018</strong></h3>
+
+              <!-- společný přehled zkušeností u grafiky -->
+              <ul class="seznam-prace">
+                <li>Předtisková příprava a úprava podkladů pro malý i velký formát</li>
+                <li>Tisk brožur, vizitek, letáků, plakátů, fotografií a dalších tiskovin</li>
+                <li>Dokončovací techniky – řezání, vazba, laminace, kroužkování</li>
+                <li>Výroba a potisk reklamních předmětů, sublimace hrnků, tisk na textil a canvas</li>
+                <li>Tvorba log, vizuálních stylů, jídelních lístků, pozvánek a dalších grafických materiálů</li>
+                <li>Příprava bannerů, reklamních systémů a potisku aut</li>
+                <li>Základní montáže v terénu (lepení výloh, výměna bannerů, instalace systémů)</li>
+              </ul>
+            </article>
+
+          </section>
+
+          <!-- PRACOVNÍ ZKUŠENOSTI MIMO OBOR -->
+          <section>
+            <h2>PRACOVNÍ ZKUŠENOSTI MIMO OBOR</h2>
+            <p>Mimo práci v reklamních agenturách a aktuálním zaměstnání v DWH, mám dlouholetou zkušenost s obsluhou lidí, také jsem si vyzkoušela práci hostesky a pořadatele sportovních akcí. Zúčastnila jsem se dětských akcí, školy v přírodě jako vychovatel a přes zimu jsem několik sezón částečně pracovala jako instruktor lyžování.</p>
+          </section>
+
+        </div><!-- konec karty -->
+      </section>
+    </main>
+
+    <!-- PATIČKA: copyright dole -->
+    <footer class="paticka">© 2024, Kristýna Jiravová</footer>
+
+  </div><!-- konec stranky -->
+</body>
+</html>
