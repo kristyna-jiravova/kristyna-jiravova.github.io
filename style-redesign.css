@@ -1,45 +1,44 @@
 /* ----------------------------------------------------------
-   Styl stránky (čeština v komentářích + názvy proměnných)
-   Pozor: tento soubor přepíše vizuální nastavení. Pokud
-   máš nějaké lokální změny, udělej zálohu.
+   Page style (consistent English variable names + selectors)
+   Visuals preserved.
    ---------------------------------------------------------- */
 
-/* --- proměnné (barevná schémata, rozměry) --- */
+/* --- variables (colors, sizes) --- */
 :root{
-  --pozadi: #f6f7f8;
-  --karta: #ffffff;
-  --laska: #2b7b86;           /* primární akcent */
-  --panel-svetly: #cde7ea;
-  --barva-nazvu: #16394a;
-  --sirka-sidebar: 320px;
-  --mezera: 28px;
-  --roh: 12px;
-  --max-sirka: 1300px;
-  --telo-font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  --jmeno-font: "Playfair Display", serif;
-  --text-barva: #222;
+  --background: #f6f7f8;
+  --card: #ffffff;
+  --accent: #2b7b86;           /* primary accent */
+  --panel-light: #cde7ea;
+  --title-color: #16394a;
+  --sidebar-width: 320px;
+  --gap: 28px;
+  --radius: 12px;
+  --max-width: 1300px;
+  --body-font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  --name-font: "Playfair Display", serif;
+  --text-color: #222;
   --muted: #667;
 }
 
-/* --- reset základů --- */
+/* --- reset basics --- */
 *{ box-sizing:border-box; margin:0; padding:0; }
 html,body{ height:100%; }
 body{
-  font-family:var(--telo-font);
+  font-family:var(--body-font);
   background: linear-gradient(180deg,#fbfcfc,#f3f5f6);
-  color:var(--text-barva);
+  color:var(--text-color);
   -webkit-font-smoothing:antialiased;
   padding:28px;
   display:flex;
   justify-content:center;
 }
 
-.site{ width:100%; max-width:var(--max-sirka); }
+.site{ width:100%; max-width:var(--max-width); }
 
 .header{
   position:relative;
   background: linear-gradient(180deg,#e7eef0,#dfeff2);
-  border-radius:var(--roh);
+  border-radius:var(--radius);
   padding:28px 36px;
   margin-bottom:22px;
   box-shadow:0 2px 6px rgba(18,24,30,0.04);
@@ -48,14 +47,14 @@ body{
   justify-content:center;
 }
 .header__name{
-  font-family:var(--jmeno-font);
-  color:var(--barva-nazvu);
+  font-family:var(--name-font);
+  color:var(--title-color);
   font-size:48px;
   font-weight:700;
-  padding-right:400px; /* rezervace místa pro fotku */
+  padding-right:400px; /* reserve space for photo */
 }
 
-/* --- kruhová fotka --- */
+/* --- circular photo --- */
 .header__photo{
   position:absolute;
   right:18px;
@@ -75,13 +74,13 @@ body{
 /* --- GRID: sidebar + main content area --- */
 .layout__main{
   display:grid;
-  grid-template-columns: var(--sirka-sidebar) 1fr;
-  gap:var(--mezera);
+  grid-template-columns: var(--sidebar-width) 1fr;
+  gap:var(--gap);
   align-items:start;
 }
 
 .sidebar{
-  background: linear-gradient(180deg,var(--panel-svetly), #d1ebee);
+  background: linear-gradient(180deg,var(--panel-light), #d1ebee);
   padding:22px;
   border-radius:10px;
   color:#05303a;
@@ -91,54 +90,56 @@ body{
   min-height:360px;
 }
 
-/* --- 1) Vynucené odstranění kurzívy v postranním panelu --- */
-/* Někde se ti kurzíva děla dědičně/skrytě — tady to explicitně přepíšeme. */
+/* --- forced removal of italic in sidebar --- */
 .sidebar * {
   font-style: normal !important;
-  font-family: var(--telo-font) !important;
+  font-family: var(--body-font) !important;
 }
 
-/* specificky pro úvodní texty (jasné pravidlo) */
-.intro.intro__text { font-size:15px; line-height:1.55; color: rgba(0,20,24,0.95); }
+/* specifically for intro texts */
+.intro__text { font-size:15px; line-height:1.55; color: rgba(0,20,24,0.95); }
 
 .sidebar__info p{ font-size:14px; line-height:1.45; color:rgba(0,20,24,0.9); }
 
 /* separator in sidebar */
 .separator{ border:0; border-top:1px solid rgba(0,0,0,0.06); margin:8px 0; }
 
-/* Contact: adress with pictogram + mail + phone number + LinkedIn button */
-/* Používáme grid, aby ikonka byla vždy u prvního řádku a text pod ní správně zalomený */
-.contact.kontakt-adresa{
-  display: grid;
-  grid-template-columns: 20px 1fr; /* sloupeček pro ikonku + text */
-  column-gap: 10px;
-  align-items: start;              /* ikonka u prvního řádku */
+/* Contact block */
+.contact{
   font-size:15px;
   line-height:1.45;
   color:#042b2e;
   margin:4px 0 8px 0;
 }
 
-/* ladění pozice svg ikonky (vertikální posun) */
-.contact.kontakt-adresa svg {
+/* Grid for address: icon column + text column */
+.contact__address{
+  display: grid;
+  grid-template-columns: 20px 1fr; /* icon column + text */
+  column-gap: 10px;
+  align-items: start;
+}
+
+/* svg icon tuning */
+.contact__icon {
   width:18px;
   height:18px;
-  margin-top:2px; /* jemné posunutí dolů */
+  margin-top:2px; /* subtle downward nudge */
   display:block;
   flex-shrink:0;
   color:#042b2e;
 }
 
-/* ostatní kontaktní řádky (email, telefon) - tučně pro čitelnost */
-.contact.kontakt-radek { margin:8px 0; font-size:15px; line-height:1.4; color:#042b2e; }
-.contact.kontakt-radek strong, .contact.kontakt-radek a { font-weight:700; color:#042b2e; text-decoration:none; }
+/* other contact lines (email, phone, linkedin) */
+.contact__line { margin:8px 0; font-size:15px; line-height:1.4; color:#042b2e; }
+.contact__line strong, .contact__line a { font-weight:700; color:#042b2e; text-decoration:none; }
 
-/* LinkedIn tlačítko */
-.tlacitko-linkedin{
+/* LinkedIn button (kept visual) */
+.contact__linkedin{
   display:inline-flex;
   gap:10px;
   align-items:center;
-  background:var(--laska);
+  background:var(--accent);
   color:#fff;
   padding:10px 14px;
   border-radius:10px;
@@ -147,50 +148,49 @@ body{
   box-shadow:0 6px 18px rgba(43,123,134,0.18);
 }
 
-/* --- PRAVÝ OBSAH: karta s textem --- */
-.layout__main.about{
-  background:var(--about);
+/* --- RIGHT CONTENT CARD --- */
+.main__content{
+  background:var(--card);
   padding:22px;
   border-radius:10px;
   box-shadow:0 6px 18px rgba(28,36,40,0.04);
   border:1px solid rgba(0,0,0,0.03);
 }
 
-/* nadpisy */
-h2{ font-size:16px; letter-spacing:1px; text-transform:uppercase; color:var(--laska); margin-bottom:12px; }
-.pozice h3, .pozice h3 strong{ font-size:15px; margin:12px 0 8px 0; color:#12343a; font-weight:700; line-height:1.2; }
+/* headings */
+h2{ font-size:16px; letter-spacing:1px; text-transform:uppercase; color:var(--accent); margin-bottom:12px; }
+.job h3, .job h3 strong{ font-size:15px; margin:12px 0 8px 0; color:#12343a; font-weight:700; line-height:1.2; }
 
-/* paragrafy */
-.about p{ font-size:15px; line-height:1.6; color:var(--text-barva); margin-bottom:12px; }
+/* paragraphs in about */
+.about p{ font-size:15px; line-height:1.6; color:var(--text-color); margin-bottom:12px; }
 
-/* seznamy prací - malé kulaté tečky */
-.seznam-prace{ list-style:none; margin:10px 0 22px 12px; padding:0; }
-.seznam-prace li{ position:relative; padding-left:18px; margin:6px 0; font-size:15px; line-height:1.5; color:var(--text-barva); }
-.seznam-prace li::before{ content:""; position:absolute; left:0; top:0.55em; width:7px; height:7px; border-radius:50%; background:var(--laska); box-shadow:0 1px 3px rgba(43,123,134,0.18); }
+/* job lists - small round bullets */
+.job__list{ list-style:none; margin:10px 0 22px 12px; padding:0; }
+.job__list li{ position:relative; padding-left:18px; margin:6px 0; font-size:15px; line-height:1.5; color:var(--text-color); }
+.job__list li::before{ content:""; position:absolute; left:0; top:0.55em; width:7px; height:7px; border-radius:50%; background:var(--accent); box-shadow:0 1px 3px rgba(43,123,134,0.18); }
 
-/* mezera mezi pozicemi */
-.pozice + .pozice { margin-top:12px; }
+/* spacing between job entries */
+.job + .job { margin-top:12px; }
 
-/* pata stránky dole */
-.paticka { width:100%; max-width:var(--max-sirka); margin:26px auto 0; padding:10px 0; }
+/* footer */
+.site__footer { width:100%; max-width:var(--max-width); margin:26px auto 0; padding:10px 0; }
 
-/* --- responzivita (mobily/tablety) --- */
+/* --- responsiveness (mobile/tablet) --- */
 @media (max-width:980px){
-  .celeJmeno{ font-size:40px; padding-right:140px; }
-  .foto-kruh{ width:120px; height:120px; right:14px; border-width:4px; }
+  .header__name{ font-size:40px; padding-right:140px; }
+  .header__photo{ width:120px; height:120px; right:14px; border-width:4px; }
   .layout__main{ grid-template-columns: 300px 1fr; gap:28px; }
-  .postranniPanel{ min-height:340px; }
+  .sidebar{ min-height:340px; }
 }
 @media (max-width:760px){
   body{ padding:18px; }
   .header{ padding:20px; }
-  .celeJmeno{ padding-right:0; text-align:center; font-size:32px; }
+  .header__name{ padding-right:0; text-align:center; font-size:32px; }
   .header__photo{ position:relative; transform:none; margin:12px auto 0; right:auto; top:auto; display:block; width:110px; height:110px; }
   .layout__main{ grid-template-columns: 1fr; gap:18px; }
   .sidebar{ order:2; min-height:unset; width:100%; padding:16px; }
-  .mlayout__main{ order:1; }
-  .layout__main.about{ padding:18px; }
-  .tlacitko-linkedin{ justify-content:center; width:100%; }
-  .seznam-prace li::before{ top:0.5em; width:9px; height:9px; }
-  .seznam-prace li{ padding-left:24px; font-size:14px; }
+  .main__content{ order:1; padding:18px; }
+  .contact__linkedin{ justify-content:center; width:100%; }
+  .job__list li::before{ top:0.5em; width:9px; height:9px; }
+  .job__list li{ padding-left:24px; font-size:14px; }
 }
