@@ -134,7 +134,15 @@ body{
 .contact__line { margin:8px 0; font-size:15px; line-height:1.4; color:#042b2e; }
 .contact__line strong, .contact__line a { font-weight:700; color:#042b2e; text-decoration:none; }
 
-/* LinkedIn button (kept visual) */
+.contact__line.contact__line--multiline {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  column-gap: 10px;
+  align-items: start;
+  margin: 8px 0;
+}
+
+/* LinkedIn button*/
 .contact__linkedin{
   display:inline-flex;
   gap:10px;
